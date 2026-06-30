@@ -1,0 +1,50 @@
+name: badwallet_app
+description: BadWallet — Consumer mobile wallet (transfers, bill payments, history).
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management — chosen per spec: Provider injects API services and
+  # propagates balance/transaction changes without rebuilding the whole tree.
+  provider: ^6.1.2
+
+  # Networking
+  http: ^1.2.2
+
+  # Formatting (currency, dates)
+  intl: ^0.19.0
+
+  # Typography
+  google_fonts: ^6.2.1
+
+  # Secure on-device storage (phone number / session) — Keystore/Keychain backed
+  flutter_secure_storage: ^9.2.2
+
+  # Lightweight persistent TTL cache for offline-first balance/transactions/bills
+  shared_preferences: ^2.3.2
+
+  # Client-generated idempotency keys for transfer / pay-factures requests
+  uuid: ^4.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+# Uncomment once assets/icon/icon.png exists (see README — "Custom app icon"),
+# then run: dart run flutter_launcher_icons
+# flutter_launcher_icons:
+#   android: true
+#   ios: true
+#   image_path: "assets/icon/icon.png"
+
+flutter:
+  uses-material-design: true
